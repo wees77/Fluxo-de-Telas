@@ -1,4 +1,4 @@
-package screens
+package com.aulasandroid.navegacaofluxotelas.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -14,23 +14,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun PedidosScreen() {
+fun PedidosScreen(navController: NavController,
+                  numeroPedido : String) {
     Box(
         modifier = Modifier.fillMaxSize()
             .background(Color(0xFC42ED04))
             .padding(32.dp)
     ) {
         Text(
-            text = "PEDIDOS",
+            text = "PEDIDOS - $numeroPedido",
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp,
             color = Color.White
         )
 
         Button(
-            onClick = {/* TODO */ },
+            onClick = {navController.navigate("menu") },
             colors = ButtonDefaults.buttonColors(
                 Color.White
             ),

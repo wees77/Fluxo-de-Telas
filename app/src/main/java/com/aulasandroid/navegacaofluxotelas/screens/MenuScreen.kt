@@ -1,4 +1,4 @@
-package screens
+package com.aulasandroid.navegacaofluxotelas.screens
 
 import android.R
 import android.R.attr.direction
@@ -19,9 +19,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun MenuScreen() {
+fun MenuScreen(navController: NavController) {
     Box(
         modifier = Modifier.fillMaxSize()
             .background(Color(0xFC0410ED))
@@ -42,7 +43,7 @@ fun MenuScreen() {
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Button(
-                onClick = {/* TODO */},
+                onClick = {navController.navigate("perfil/Mario/32")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
@@ -56,7 +57,8 @@ fun MenuScreen() {
                 )
             }
             Button(
-                onClick = {/* TODO */},
+                onClick = {navController.navigate("pedidos?numeroPedido=1234")
+                          },
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
@@ -70,7 +72,7 @@ fun MenuScreen() {
                 )
             }
             Button(
-                onClick = {/* TODO */},
+                onClick = {navController.navigate("login")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
